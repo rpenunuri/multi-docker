@@ -15,7 +15,7 @@ after_success:
   - docker build -t rpenunuri/multi-worker ./worker
 
   # Log in to the docker CLI
-  - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
+  - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # Take those images and push them to docker hub
   - docker push rpenunuri/multi-client
   - docker push rpenunuri/multi-nginx
