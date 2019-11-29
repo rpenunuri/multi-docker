@@ -25,7 +25,7 @@ after_success:
   # - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # Password: 
   # - docker login -u "${DOCKER_ID}" -p "${DOCKER_PASSWORD}"
-  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin
+  - echo $DOCKER_PASS | docker login --username $DOCKER_USER --password-stdin
   # Take those images and push them to docker hub
   - docker push rpenunuri/multi-client
   - docker push rpenunuri/multi-nginx
