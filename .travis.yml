@@ -17,11 +17,11 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD"
   - echo "$DOCKER_ID"
-  - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
+  - docker login -u DOCKER_ID -p DOCKER_PASSWORD
   # flag needs an argument: 'p' in -p
   # - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # Password: 
-  - docker login -u "${DOCKER_ID}" -p "${DOCKER_PASSWORD}"
+  # - docker login -u "${DOCKER_ID}" -p "${DOCKER_PASSWORD}"
   # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push rpenunuri/multi-client
