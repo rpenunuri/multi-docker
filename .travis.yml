@@ -15,8 +15,6 @@ after_success:
   - docker build -t rpenunuri/multi-worker ./worker
 
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD"
-  - echo "$DOCKER_ID"
   # - docker login -u DOCKER_ID -p DOCKER_PASSWORD
 # WARNING! Using --password via the CLI is insecure. Use --password-stdin.
 # Error response from daemon: Get https://registry-1.docker.io/v2/: unauthorized: incorrect username or password
@@ -25,7 +23,7 @@ after_success:
   # - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   # Password: 
   # - docker login -u "${DOCKER_ID}" -p "${DOCKER_PASSWORD}"
-  - echo $DOCKER_PASS | docker login --username $DOCKER_USER --password-stdin
+  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
   # Take those images and push them to docker hub
   - docker push rpenunuri/multi-client
   - docker push rpenunuri/multi-nginx
